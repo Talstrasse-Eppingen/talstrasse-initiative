@@ -104,19 +104,49 @@ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
 }
 
+/* MODERNE ZIELE-KARTEN */
 .info{
 background:white;
-padding:25px;
+padding:30px;
 text-align:center;
-border-radius:12px;
-box-shadow:0 6px 16px rgba(0,0,0,.08);
+border-radius:14px;
+box-shadow:0 6px 18px rgba(0,0,0,.08);
+transition:transform .2s ease, box-shadow .2s ease;
 }
 
-  .info-icon{
-font-size:42px;
-display:block;
-margin-bottom:10px;
+.info:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 25px rgba(0,0,0,.12);
 }
+
+/* ICON-Kreis */
+.info-icon{
+width:70px;
+height:70px;
+margin:0 auto 15px auto;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:32px;
+border-radius:50%;
+background:#f0f3f8;
+}
+
+.info:nth-child(1) .info-icon{background:#eaf2ff;}
+.info:nth-child(2) .info-icon{background:#fff0f0;}
+.info:nth-child(3) .info-icon{background:#f0fff4;}
+.info:nth-child(4) .info-icon{background:#fff7e6;}
+
+.info h3{
+margin:10px 0;
+color:#1e2a44;
+}
+
+.info p{
+font-size:0.95rem;
+color:#555;
+}
+
 /* SUPPORT */
 .support{
 background:#1e2a44;
@@ -214,17 +244,36 @@ Im Mittelpunkt stehen weniger Verkehrslärm, mehr Sicherheit und ein konstruktiv
 
 </section>
 
-<!-- ZIELE -->
+<!-- ZIELE (MODERNISIERT) -->
 <section class="card" id="ziele">
 
 <h2>Ziele</h2>
 
 <div class="grid">
 
-<div class="info">🚗<h3>Verkehr</h3><p>Entlastung der Talstraße</p></div>
-<div class="info">🔊<h3>Lärm</h3><p>Reduzierung der Belastung</p></div>
-<div class="info">🏠<h3>Ruhe</h3><p>Mehr Lebensqualität</p></div>
-<div class="info">🚶<h3>Sicherheit</h3><p>Bessere Bedingungen für Fußgänger</p></div>
+<div class="info">
+<div class="info-icon">🚗</div>
+<h3>Verkehr</h3>
+<p>Entlastung der Talstraße</p>
+</div>
+
+<div class="info">
+<div class="info-icon">🔊</div>
+<h3>Lärm</h3>
+<p>Reduzierung der Belastung</p>
+</div>
+
+<div class="info">
+<div class="info-icon">🏠</div>
+<h3>Ruhe</h3>
+<p>Mehr Lebensqualität</p>
+</div>
+
+<div class="info">
+<div class="info-icon">🚶</div>
+<h3>Sicherheit</h3>
+<p>Bessere Bedingungen für Fußgänger</p>
+</div>
 
 </div>
 
@@ -262,7 +311,7 @@ src="https://www.openstreetmap.org/export/embed.html?bbox=8.869%2C49.138%2C8.885
 
 <h2>Unterstützen Sie die Initiative</h2>
 
-<div class="counter" id="counter">0</div>
+<div class="counter">0</div>
 
 <p>Aktuelle Unterstützer</p>
 
