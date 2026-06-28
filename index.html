@@ -1,100 +1,144 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Talstraße – Initiative</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:#f5f6f8;
+color:#333;
+}
+
+header{
+background:#1e2a44;
+color:white;
+text-align:center;
+padding:60px 20px;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:30px 20px;
+}
+
+.card{
+background:white;
+padding:25px;
+margin-bottom:20px;
+border-radius:10px;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+}
+
+.info{
+background:#fff;
+padding:20px;
+border-radius:10px;
+text-align:center;
+box-shadow:0 2px 8px rgba(0,0,0,.06);
+}
+
+.button{
+display:inline-block;
+background:#ff8c42;
+color:white;
+padding:12px 20px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+}
+
+footer{
+background:#1e2a44;
+color:white;
+text-align:center;
+padding:30px;
+margin-top:40px;
+}
+
+.map iframe{
+width:100%;
+height:300px;
+border:0;
+border-radius:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Talstraße Initiative</h1>
+<p>Gemeinsam für mehr Lebensqualität in Eppingen</p>
+</header>
+
 <div class="container">
 
-<!-- INITIATIVE -->
-<section class="card" id="initiative">
-
+<div class="card">
 <h2>Unsere Initiative</h2>
+<p>Wir setzen uns für weniger Lärm, mehr Sicherheit und eine bessere Lebensqualität in der Talstraße ein.</p>
+</div>
 
-<p>
-Wir setzen uns für eine spürbare Verbesserung der Lebensqualität in der Talstraße ein.
-Im Mittelpunkt stehen weniger Verkehrslärm, mehr Sicherheit und ein konstruktiver Dialog.
-</p>
-
-</section>
-
-<!-- ZIELE -->
-<section class="card" id="ziele">
-
+<div class="card">
 <h2>Ziele</h2>
 
 <div class="grid">
 
-<div class="info">
-<div class="info-icon">🚗</div>
-<h3>Verkehr</h3>
-<p>Entlastung der Talstraße</p>
-</div>
+<div class="info">🚗 Verkehr</div>
+<div class="info">🔊 Lärm</div>
+<div class="info">🏠 Ruhe</div>
+<div class="info">🚶 Sicherheit</div>
 
-<div class="info">
-<div class="info-icon">🔊</div>
-<h3>Lärm</h3>
-<p>Reduzierung der Belastung</p>
-</div>
-
-<div class="info">
-<div class="info-icon">🏠</div>
-<h3>Ruhe</h3>
-<p>Mehr Lebensqualität</p>
-</div>
-
-<div class="info">
-<div class="info-icon">🚶</div>
-<h3>Sicherheit</h3>
-<p>Bessere Bedingungen für Fußgänger</p>
 </div>
 
 </div>
 
-</section>
-
-<!-- AKTUELLES -->
-<section class="card" id="news">
-
+<div class="card">
 <h2>Aktuelles</h2>
+<p>✔ Website gestartet<br>✔ Flyer verteilt</p>
+</div>
 
-<div class="news-item">✔ Website gestartet</div>
-<div class="news-item">✔ Flyer verteilt</div>
-<div class="news-item">⏳ Rückmeldungen werden gesammelt</div>
-<div class="news-item">⏳ Gespräche mit Stadt geplant</div>
-
-</section>
-
-<!-- KARTE (NUR EINMAL!) -->
-<section class="card" id="karte">
-
+<div class="card">
 <h2>Lage der Talstraße</h2>
 
-<p>Die Talstraße in Eppingen</p>
-
 <div class="map">
-
 <iframe
-width="100%"
-height="350"
-frameborder="0"
-scrolling="no"
 src="https://www.openstreetmap.org/export/embed.html?&layer=mapnik&mlat=49.1422&mlon=8.8760#map=17/49.1422/8.8760">
 </iframe>
+</div>
 
 </div>
 
-</section>
+<div class="card">
+<h2>Unterstützen</h2>
+<p>Aktuell: 0 Unterstützer</p>
 
-<!-- SUPPORT -->
-<section class="support" id="support">
-
-<h2>Unterstützen Sie die Initiative</h2>
-
-<div class="counter">0</div>
-
-<p>Aktuelle Unterstützer</p>
-
-<br>
-
-<a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSeCNFpVdhJefUA2E3rcYf8cUtKZGg3MpMjkDa19qBBWGcXZIg/viewform">
+<a class="button"
+href="https://docs.google.com/forms/d/e/1FAIpQLSeCNFpVdhJefUA2E3rcYf8cUtKZGg3MpMjkDa19qBBWGcXZIg/viewform">
 Jetzt unterstützen
 </a>
 
-</section>
+</div>
 
 </div>
+
+<footer>
+Talstraße Initiative – Eppingen
+</footer>
+
+</body>
+</html>
