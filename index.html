@@ -1,235 +1,3 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Talstraße – Mehr Ruhe. Mehr Sicherheit.</title>
-
-<style>
-
-body{
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:#f5f6f8;
-color:#333;
-line-height:1.6;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-/* NAV */
-nav{
-background:#1e2a44;
-position:sticky;
-top:0;
-z-index:1000;
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-}
-
-nav a{
-color:white;
-padding:15px 18px;
-text-decoration:none;
-font-weight:bold;
-}
-
-nav a:hover{
-background:#2f456b;
-}
-
-/* HERO */
-.hero{
-background:
-linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-url("talstrasse.jpg");
-background-size:cover;
-background-position:center;
-color:white;
-text-align:center;
-padding:120px 20px;
-}
-
-.hero h1{
-font-size:3rem;
-margin-bottom:15px;
-}
-
-.hero p{
-font-size:1.3rem;
-max-width:700px;
-margin:auto;
-margin-bottom:30px;
-}
-
-.button{
-display:inline-block;
-background:#ff8c42;
-color:white;
-padding:15px 28px;
-border-radius:8px;
-text-decoration:none;
-font-weight:bold;
-transition:.3s;
-}
-
-.button:hover{
-background:#ff7320;
-transform:translateY(-2px);
-}
-
-/* LAYOUT */
-.container{
-max-width:1100px;
-margin:auto;
-padding:50px 20px;
-}
-
-.card{
-background:white;
-padding:30px;
-border-radius:12px;
-margin-bottom:25px;
-box-shadow:0 6px 18px rgba(0,0,0,.08);
-}
-
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-
-/* MODERNE ZIELE-KARTEN */
-.info{
-background:white;
-padding:30px;
-text-align:center;
-border-radius:14px;
-box-shadow:0 6px 18px rgba(0,0,0,.08);
-transition:transform .2s ease, box-shadow .2s ease;
-}
-
-.info:hover{
-transform:translateY(-6px);
-box-shadow:0 10px 25px rgba(0,0,0,.12);
-}
-
-/* ICON-Kreis */
-.info-icon{
-width:70px;
-height:70px;
-margin:0 auto 15px auto;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:32px;
-border-radius:50%;
-background:#f0f3f8;
-}
-
-.info:nth-child(1) .info-icon{background:#eaf2ff;}
-.info:nth-child(2) .info-icon{background:#fff0f0;}
-.info:nth-child(3) .info-icon{background:#f0fff4;}
-.info:nth-child(4) .info-icon{background:#fff7e6;}
-
-.info h3{
-margin:10px 0;
-color:#1e2a44;
-}
-
-.info p{
-font-size:0.95rem;
-color:#555;
-}
-
-/* SUPPORT */
-.support{
-background:#1e2a44;
-color:white;
-text-align:center;
-padding:50px;
-border-radius:12px;
-}
-
-.counter{
-font-size:55px;
-color:#ffb347;
-margin:20px 0;
-font-weight:bold;
-}
-
-/* NEWS */
-.news-item{
-padding:10px 0;
-border-bottom:1px solid #ddd;
-}
-
-/* FOOTER */
-footer{
-background:#1e2a44;
-color:white;
-text-align:center;
-padding:40px;
-margin-top:40px;
-}
-
-footer a{
-color:white;
-text-decoration:none;
-margin:0 8px;
-}
-
-footer a:hover{
-text-decoration:underline;
-}
-
-/* MAP */
-.map iframe{
-width:100%;
-height:300px;
-border:0;
-border-radius:12px;
-}
-
-@media(max-width:700px){
-.hero h1{font-size:2.2rem;}
-.hero{padding:90px 20px;}
-}
-
-</style>
-</head>
-
-<body>
-
-<!-- NAV -->
-<nav>
-<a href="#initiative">Initiative</a>
-<a href="#ziele">Ziele</a>
-<a href="#news">Aktuelles</a>
-<a href="#karte">Karte</a>
-<a href="#support">Unterstützen</a>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-
-<h1>Mehr Ruhe in der Talstraße</h1>
-
-<p>
-Weniger Lärm. Mehr Sicherheit. Mehr Lebensqualität für Eppingen.
-</p>
-
-<a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSeCNFpVdhJefUA2E3rcYf8cUtKZGg3MpMjkDa19qBBWGcXZIg/viewform">
-Jetzt unterstützen
-</a>
-
-</section>
-
 <div class="container">
 
 <!-- INITIATIVE -->
@@ -244,7 +12,7 @@ Im Mittelpunkt stehen weniger Verkehrslärm, mehr Sicherheit und ein konstruktiv
 
 </section>
 
-<!-- ZIELE (MODERNISIERT) -->
+<!-- ZIELE -->
 <section class="card" id="ziele">
 
 <h2>Ziele</h2>
@@ -279,7 +47,7 @@ Im Mittelpunkt stehen weniger Verkehrslärm, mehr Sicherheit und ein konstruktiv
 
 </section>
 
-<!-- NEWS -->
+<!-- AKTUELLES -->
 <section class="card" id="news">
 
 <h2>Aktuelles</h2>
@@ -287,23 +55,28 @@ Im Mittelpunkt stehen weniger Verkehrslärm, mehr Sicherheit und ein konstruktiv
 <div class="news-item">✔ Website gestartet</div>
 <div class="news-item">✔ Flyer verteilt</div>
 <div class="news-item">⏳ Rückmeldungen werden gesammelt</div>
-<div class="news-item">⏳ Gespräch mit Stadt geplant</div>
+<div class="news-item">⏳ Gespräche mit Stadt geplant</div>
 
 </section>
 
-<!-- MAP -->
+<!-- KARTE (NUR EINMAL!) -->
+<section class="card" id="karte">
+
+<h2>Lage der Talstraße</h2>
+
+<p>Die Talstraße in Eppingen</p>
+
+<div class="map">
+
 <iframe
 width="100%"
 height="350"
 frameborder="0"
 scrolling="no"
-marginheight="0"
-marginwidth="0"
 src="https://www.openstreetmap.org/export/embed.html?&layer=mapnik&mlat=49.1422&mlon=8.8760#map=17/49.1422/8.8760">
 </iframe>
+
 </div>
-
-
 
 </section>
 
@@ -325,24 +98,3 @@ Jetzt unterstützen
 </section>
 
 </div>
-
-<!-- FOOTER -->
-<footer>
-
-<p><strong>Talstraße – Gemeinsam für mehr Lebensqualität</strong></p>
-
-<p>
-<a href="#initiative">Initiative</a> |
-<a href="#ziele">Ziele</a> |
-<a href="#news">Aktuelles</a> |
-<a href="#support">Unterstützen</a>
-</p>
-
-<p style="opacity:.7;margin-top:15px;">
-Bürgerinitiative aus Eppingen
-</p>
-
-</footer>
-
-</body>
-</html>
