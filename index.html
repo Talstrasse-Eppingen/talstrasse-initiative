@@ -226,22 +226,37 @@ text-decoration:underline;
 
 .timeline{
 margin-top:20px;
+display:flex;
+flex-direction:column;
+gap:15px;
 }
 
 .timeline-item{
-background:white;
-padding:15px 15px 15px 20px;
-margin-bottom:15px;
+display:flex;
+gap:12px;
+align-items:flex-start;
+background:#fff;
+padding:15px;
+border-radius:10px;
 border-left:3px solid #ff8c42;
 }
 
-.timeline-date{
-font-weight:bold;
-color:#1e2a44;
-margin-bottom:5px;
+.marker{
+width:10px;
+height:10px;
+border-radius:50%;
+background:#ff8c42;
+margin-top:6px;
+flex-shrink:0;
 }
 
-.timeline-content{
+.date{
+font-weight:bold;
+color:#1e2a44;
+margin-bottom:4px;
+}
+
+.text{
 color:#555;
 line-height:1.6;
 }
@@ -368,38 +383,39 @@ um gemeinsam tragfähige Lösungen für eine lebenswertere Talstraße zu erreich
 <!-- NEWS -->
 <section class="card" id="news">
 
-<!-- CHRONIK -->
-<section class="card" id="news">
-
 <h2>Chronik</h2>
 
 <div class="timeline">
 
 <div class="timeline-item">
-<div class="timeline-date">30.06.2026</div>
-<div class="timeline-content">
-Start der Website der Initiative „Talstraße – Mehr Ruhe. Mehr Sicherheit.“
+<div class="marker"></div>
+<div class="content">
+<div class="date">30.06.2026</div>
+<div class="text">Start der Website der Initiative „Talstraße – Mehr Ruhe. Mehr Sicherheit.“</div>
 </div>
 </div>
 
 <div class="timeline-item">
-<div class="timeline-date">29.08.2025</div>
-<div class="timeline-content">
-Schriftliche Anfrage an die Stadtverwaltung zur Verkehrssituation in der Talstraße (Lärm, Schwerverkehr, Sicherheit im Wohngebiet). Bislang keine Rückmeldung.
+<div class="marker"></div>
+<div class="content">
+<div class="date">29.08.2025</div>
+<div class="text">Schriftliche Anfrage an die Stadtverwaltung zur Verkehrssituation in der Talstraße. Bislang keine Rückmeldung.</div>
 </div>
 </div>
 
 <div class="timeline-item">
-<div class="timeline-date">laufend</div>
-<div class="timeline-content">
-Rückmeldungen aus der Nachbarschaft werden gesammelt und dokumentiert.
+<div class="marker"></div>
+<div class="content">
+<div class="date">laufend</div>
+<div class="text">Rückmeldungen aus der Nachbarschaft werden gesammelt und dokumentiert.</div>
 </div>
 </div>
 
 <div class="timeline-item">
-<div class="timeline-date">geplant</div>
-<div class="timeline-content">
-Gespräche mit Stadtverwaltung und Gemeinderat zur Prüfung möglicher Maßnahmen.
+<div class="marker"></div>
+<div class="content">
+<div class="date">geplant</div>
+<div class="text">Gespräche mit Stadtverwaltung und Gemeinderat zur Prüfung möglicher Maßnahmen.</div>
 </div>
 </div>
 
