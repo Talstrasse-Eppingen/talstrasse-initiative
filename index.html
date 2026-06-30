@@ -228,28 +228,42 @@ text-decoration:underline;
 margin-top:20px;
 display:flex;
 flex-direction:column;
-gap:15px;
+gap:0;
+position:relative;
 }
 
+/* DIE LINIE (durchgehend) */
+.timeline::before{
+content:"";
+position:absolute;
+left:18px;
+top:0;
+bottom:0;
+width:2px;
+background:#d0d7e2;
+}
+
+/* EINTRÄGE */
 .timeline-item{
 display:flex;
-gap:12px;
-align-items:flex-start;
-background:white;
-padding:15px;
-border-left:3px solid #ff8c42;
-border-radius:10px;
+gap:15px;
+padding:15px 0 15px 40px;
+position:relative;
 }
 
+/* MARKER exakt auf Linie */
 .marker{
 width:10px;
 height:10px;
 border-radius:50%;
 background:#ff8c42;
-margin-top:6px;
-flex-shrink:0;
+position:absolute;
+left:14px;
+top:22px;
+z-index:2;
 }
 
+/* TEXT */
 .content{
 flex:1;
 }
