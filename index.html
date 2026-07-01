@@ -469,6 +469,25 @@ src="https://www.openstreetmap.org/export/embed.html?bbox=8.9045%2C49.1398%2C8.9
     Jetzt unterstützen
 </a>
 
+<!-- SUPPORT -->
+<section class="support" id="support">
+<h2>Unterstützen Sie die Initiative</h2>
+
+<!-- Der Zähler holt sich die Zahl nun automatisch live ab -->
+<div class="counter" id="live-counter">Lade...</div>
+
+<p>Aktuelle Unterstützer</p>
+
+<p style="font-size: 0.95rem; opacity: 0.8; max-width: 600px; margin: 15px auto;">
+    Aus Datenschutzgründen werden keine Namen veröffentlicht. Unser Zähler erfasst vollautomatisch und anonym die Anzahl der eingegangenen Unterstützungen.
+</p>
+
+<br>
+
+<a class="button" href="https://google.com" target="_blank">
+    Jetzt unterstützen
+</a>
+
 <!-- AUTOMATISCHES SKRIPT FÜR DEN LIVE-ZÄHLER -->
 <script>
 async function fetchSupporterCount() {
@@ -483,7 +502,6 @@ async function fetchSupporterCount() {
         const jsonString = text.substring(text.indexOf("{"), text.lastIndexOf("}") + 1);
         const json = JSON.parse(jsonString);
         
-        // Greift exakt auf die Tabellenstruktur von Google zu
         if (json.table && json.table.rows) {
             const totalRows = json.table.rows.length;
             const count = totalRows > 0 ? totalRows - 1 : 0;
@@ -500,7 +518,6 @@ async function fetchSupporterCount() {
 document.addEventListener("DOMContentLoaded", fetchSupporterCount);
 </script>
 </section>
-
 
 </div>
 
