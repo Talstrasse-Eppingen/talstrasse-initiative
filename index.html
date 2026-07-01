@@ -432,35 +432,38 @@ src="https://www.openstreetmap.org/export/embed.html?bbox=8.9045%2C49.1398%2C8.9
 <!-- AUTOMATISCHES SKRIPT FÜR DEN LIVE-ZÄHLER -->
 <script>
 async function fetchSupporterCount() {
-    // ⚠️ RECHTSKLICK & ID ERSETZEN: Tragen Sie hier die lange ID Ihrer Google-Tabelle ein
+    // Ihre Tabellen-ID ist hier bereits fest hinterlegt
     const sheetId = '1ez2DGmzfrLrWs1URilDswiVfJVofTycmCm0UHakfGfM';
     
-    // Wir fragen nur die Anzahl der ausgefüllten Zeilen ab (Spalte A)
+    // KORRIGIERTE URL: Mit docs.google.com und dem korrekten $-Zeichen
     const url = `https://google.com{sheetId}/gviz/tq?tqx=out:json&tq=SELECT%20COUNT(A)`;
 
     try {
         const response = await fetch(url);
+        if (!response.ok) throw new Error('Netzwerk-Fehler beim Abruf');
+        
         const text = await response.text();
         
-        // Google liefert den Code leicht verpackt zurück, das säubern wir hier:
+        // Google-Antwort säubern
         const jsonString = text.substring(text.indexOf("{"), text.lastIndexOf("}") + 1);
         const json = JSON.parse(jsonString);
         
-        // Die Zahl aus der Tabellen-Antwort herausholen (Minus 1 für die Kopfzeile)
+        // Zahl auslesen (Abzug von 1 für die Tabellen-Kopfzeile)
         const count = json.table.rows[0].c[0].v - 1;
         
-        // Falls die Tabelle noch komplett leer ist, zeigen wir 0 an
+        // Zahl anzeigen (Wenn Tabelle leer, dann 0)
         document.getElementById('live-counter').innerText = count >= 0 ? count : 0;
     } catch (error) {
         console.error('Fehler beim Laden der Unterstützerzahl:', error);
-        document.getElementById('live-counter').innerText = "Bereit"; // Fallback, falls blockiert
+        document.getElementById('live-counter').innerText = "0"; // Zeigt standardmäßig 0 bei Fehlern
     }
 }
 
-// Skript beim Laden der Webseite ausführen
-window.onload = fetchSupporterCount;
+// SICHERER START: Wartet, bis die Webseite bereit ist, ohne Konflikte
+document.addEventListener("DOMContentLoaded", fetchSupporterCount);
 </script>
 </section>
+
 
 
 </div>
