@@ -443,7 +443,7 @@ async function fetchSupporterCount() {
         const jsonString = text.substring(text.indexOf("{"), text.lastIndexOf("}") + 1);
         const json = JSON.parse(jsonString);
         
-        // KORREKTUR: Greift präzise auf die erste Zeile [0] und erste Spalte [0] zu
+        // JETZT RICHTIG: Greift korrekt auf Zeile 0 und Spalte 0 zu
         const count = json.table.rows[0].c[0].v - 1;
         
         document.getElementById('live-counter').innerText = count >= 0 ? count : 0;
