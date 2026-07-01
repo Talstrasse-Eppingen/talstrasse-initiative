@@ -413,14 +413,55 @@ src="https://www.openstreetmap.org/export/embed.html?bbox=8.9045%2C49.1398%2C8.9
 <!-- SUPPORT -->
 <section class="support" id="support">
 <h2>Unterstützen Sie die Initiative</h2>
-<!-- TIPP: Ändern Sie die Zahl '42' hier unten im Code, wenn Sie mehr Unterstützer haben! -->
-<div class="counter" id="supporter-count">42</div>
+
+<!-- Der Zähler holt sich die Zahl nun automatisch live ab -->
+<div class="counter" id="live-counter">Lade...</div>
+
 <p>Aktuelle Unterstützer</p>
+
+<p style="font-size: 0.95rem; opacity: 0.8; max-width: 600px; margin: 15px auto;">
+    Aus Datenschutzgründen werden keine Namen veröffentlicht. Unser Zähler erfasst vollautomatisch und anonym die Anzahl der eingegangenen Unterstützungen.
+</p>
+
 <br>
-<a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSeCNFpVdhJefUA2E3rcYf8cUtKZGg3MpMjkDa19qBBWGcXZIg/viewform">
-Jetzt unterstützen
+
+<a class="button" href="https://google.com" target="_blank">
+    Jetzt unterstützen
 </a>
+
+<!-- AUTOMATISCHES SKRIPT FÜR DEN LIVE-ZÄHLER -->
+<script>
+async function fetchSupporterCount() {
+    // ⚠️ RECHTSKLICK & ID ERSETZEN: Tragen Sie hier die lange ID Ihrer Google-Tabelle ein
+    const sheetId = '1ez2DGmzfrLrWs1URilDswiVfJVofTycmCm0UHakfGfM';
+    
+    // Wir fragen nur die Anzahl der ausgefüllten Zeilen ab (Spalte A)
+    const url = `https://google.com{sheetId}/gviz/tq?tqx=out:json&tq=SELECT%20COUNT(A)`;
+
+    try {
+        const response = await fetch(url);
+        const text = await response.text();
+        
+        // Google liefert den Code leicht verpackt zurück, das säubern wir hier:
+        const jsonString = text.substring(text.indexOf("{"), text.lastIndexOf("}") + 1);
+        const json = JSON.parse(jsonString);
+        
+        // Die Zahl aus der Tabellen-Antwort herausholen (Minus 1 für die Kopfzeile)
+        const count = json.table.rows[0].c[0].v - 1;
+        
+        // Falls die Tabelle noch komplett leer ist, zeigen wir 0 an
+        document.getElementById('live-counter').innerText = count >= 0 ? count : 0;
+    } catch (error) {
+        console.error('Fehler beim Laden der Unterstützerzahl:', error);
+        document.getElementById('live-counter').innerText = "Bereit"; // Fallback, falls blockiert
+    }
+}
+
+// Skript beim Laden der Webseite ausführen
+window.onload = fetchSupporterCount;
+</script>
 </section>
+
 
 </div>
 
