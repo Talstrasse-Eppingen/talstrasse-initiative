@@ -430,28 +430,28 @@ src="https://www.openstreetmap.org/export/embed.html?bbox=8.9045%2C49.1398%2C8.9
     Jetzt unterstützen
 </a>
 
-
 <!-- AUTOMATISCHES SKRIPT FÜR DEN LIVE-ZÄHLER -->
 <script>
 async function fetchSupporterCount() {
+    // Ihre Tabellen-ID bleibt unverändert
     const sheetId = '1ez2DGmzfrLrWs1URilDswiVfJVofTycmCm0UHakfGfM';
-    const url = `https://google.com${sheetId}/gviz/tq?tqx=out:json`;
+    
+    // NEU: Diese Export-Schnittstelle bricht die GitHub-Sicherheitsblockade (CORS) auf!
+    const url = "https://docs.google.com/spreadsheets/d/" + sheetId + "/export?format=csv";
 
     try {
         const response = await fetch(url);
         if (!response.ok) throw new Error('Netzwerk-Fehler');
         
         const text = await response.text();
-        const jsonString = text.substring(text.indexOf("{"), text.lastIndexOf("}") + 1);
-        const json = JSON.parse(jsonString);
         
-        if (json.table && json.table.rows) {
-            const totalRows = json.table.rows.length;
-            const count = totalRows > 0 ? totalRows - 1 : 0;
-            document.getElementById('live-counter').innerText = count;
-        } else {
-            document.getElementById('live-counter').innerText = "0";
-        }
+        // Die Textzeilen sauber trennen
+        const lines = text.trim().split(/\r?\n/);
+        
+        // Jede ausgefüllte Zeile zählen (Abzug von 1 für die Kopfzeile)
+        const count = lines.length > 0 ? lines.length - 1 : 0;
+        
+        document.getElementById('live-counter').innerText = count;
     } catch (error) {
         console.error('Fehler beim Laden:', error);
         document.getElementById('live-counter').innerText = "0";
