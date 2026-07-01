@@ -433,22 +433,20 @@ src="https://www.openstreetmap.org/export/embed.html?bbox=8.9045%2C49.1398%2C8.9
 <script>
 async function fetchSupporterCount() {
     const sheetId = '1ez2DGmzfrLrWs1URilDswiVfJVofTycmCm0UHakfGfM';
-    // Wir holen uns die gesamte Tabelle im JSON-Format
-    const url = `https://google.com{sheetId}/gviz/tq?tqx=out:json`;
+    // Wir fordern die Daten gezielt als CSV-Text an – das ist viel stabiler als JSON!
+    const url = `https://google.com{sheetId}/gviz/tq?tqx=out:csv`;
 
     try {
         const response = await fetch(url);
         if (!response.ok) throw new Error('Netzwerk-Fehler');
         
         const text = await response.text();
-        const jsonString = text.substring(text.indexOf("{"), text.lastIndexOf("}") + 1);
-        const json = JSON.parse(jsonString);
         
-        // Zählt die Anzahl der existierenden Zeilen im Array
-        const totalRows = json.table.rows.length;
+        // CSV teilt die Zeilen einfach per Zeilenumbruch. Wir splitten sie und zählen.
+        const lines = text.trim().split(/\r?\n/);
         
-        // Minus 1 für die Kopfzeile (Überschrift). Wenn leer, bleibt es bei 0.
-        const count = totalRows > 0 ? totalRows - 1 : 0;
+        // Gesamtzeilen minus 1 für die Kopfzeile. Wenn das Ergebnis unter 0 fällt, zeige 0.
+        const count = lines.length > 0 ? lines.length - 1 : 0;
         
         document.getElementById('live-counter').innerText = count;
     } catch (error) {
@@ -460,6 +458,7 @@ async function fetchSupporterCount() {
 document.addEventListener("DOMContentLoaded", fetchSupporterCount);
 </script>
 </section>
+
 
 
 </div>
