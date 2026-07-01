@@ -434,8 +434,10 @@ src="https://www.openstreetmap.org/export/embed.html?bbox=8.9045%2C49.1398%2C8.9
 async function fetchSupporterCount() {
     const sheetId = '1ez2DGmzfrLrWs1URilDswiVfJVofTycmCm0UHakfGfM';
     
-    // KORREKTUR: Fragt jetzt exakt den Reiter "Unbenanntes Formular (Antworten)" ab
-    const url = `https://google.com{sheetId}/gviz/tq?tqx=out:csv&sheet=Unbenanntes%20Formular%20(Antworten)`;
+    // TRAGEN SIE HIER BEI gid= DIE ZAHL AUS IHRER BROWSER-ADRESSZEILE EIN (z.B. gid=0 oder gid=143255)
+    const gid = '2136311780'; 
+    
+    const url = `https://google.com{sheetId}/export?format=csv&gid=${gid}`;
 
     try {
         const response = await fetch(url);
