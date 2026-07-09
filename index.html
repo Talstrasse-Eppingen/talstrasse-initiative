@@ -329,46 +329,54 @@ Wir verstehen uns als lokale Bürgerinitiative, die auf sachlicher Grundlage auf
 <section class="card" id="ziele">
 <h2>Ziele</h2>
 
-<!-- OBEN: BELASTUNGEN (Ergänzt um einheitliches Grid-Styling) -->
-<div class="grid grid-top" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; align-items: stretch;">
-<div class="info">
-<div class="info-icon">🚗</div>
-<h3>Verkehr</h3>
-<p>Entlastung der Talstraße</p>
-</div>
-<div class="info">
-<div class="info-icon">🔊</div>
-<h3>Lärm</h3>
-<p>Reduzierung der Belastung</p>
-</div>
-<div class="info">
-<div class="info-icon">📳</div>
-<h3>Erschütterungen</h3>
-<p>Wegfall von Vibrationen durch Schwer- und Landwirtschaftsverkehr</p>
-</div>
-</div>
+<!-- FLEXIBLES RESPONSIVES GRID: Schaltet auf Smartphones automatisch auf 1 Spalte untereinander -->
+<div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; align-items: stretch;">
+  
+  <!-- Box 1 -->
+  <div class="info">
+    <div class="info-icon">🚗</div>
+    <h3>Verkehr</h3>
+    <p>Entlastung der Talstraße</p>
+  </div>
+  
+  <!-- Box 2 -->
+  <div class="info">
+    <div class="info-icon">🔊</div>
+    <h3>Lärm</h3>
+    <p>Reduzierung der Belastung</p>
+  </div>
+  
+  <!-- Box 3 -->
+  <div class="info">
+    <div class="info-icon">📳</div>
+    <h3>Erschütterungen</h3>
+    <p>Wegfall von Vibrationen durch Schwer- und Landwirtschaftsverkehr</p>
+  </div>
 
-<!-- UNTEN: WIRKUNG / ZIELE (align-items: stretch erzwingt die gleiche Höhe) -->
-<div class="grid grid-bottom" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; align-items: stretch; margin-top: 1rem;">
-<div class="info">
-<div class="info-icon">🏠</div>
-<h3>Ruhe</h3>
-<p>Mehr Lebensqualität</p>
-</div>
-<div class="info">
-<div class="info-icon">🚶</div>
-<h3>Sicherheit</h3>
-<p>Bessere Bedingungen für Fußgänger</p>
-</div>
- <!-- NEU: Drittes Element mit blauer Erdkugel -->
-<div class="info">
-<div class="info-icon">🌍</div>
-<h3>Umwelt</h3>
-<p>Weniger Abgase und besserer Schutz des Ortsbereichs</p>
-</div>
+  <!-- Box 4 -->
+  <div class="info">
+    <div class="info-icon">🏠</div>
+    <h3>Ruhe</h3>
+    <p>Mehr Lebensqualität</p>
+  </div>
+  
+  <!-- Box 5 -->
+  <div class="info">
+    <div class="info-icon">🚶</div>
+    <h3>Sicherheit</h3>
+    <p>Bessere Bedingungen für Fußgänger</p>
+  </div>
+  
+  <!-- Box 6 -->
+  <div class="info">
+    <div class="info-icon">🌍</div>
+    <h3>Umwelt</h3>
+    <p>Weniger Abgase und besserer Schutz des Ortsbereichs</p>
+  </div>
+
 </div>
     
-   <!-- SPEZIFISCHE PROBLEMSTELLUNGEN VOR ORT -->
+  <!-- SPEZIFISCHE PROBLEMSTELLUNGEN VOR ORT -->
   <div class="lokale-brennpunkte" style="margin-top: 2rem; border-top: 1px solid #eee; padding-top: 1.5rem;">
     <h3>Unsere Forderungen vor Ort:</h3>
     <ul style="line-height: 1.6; padding-left: 1.5rem;">
