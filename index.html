@@ -329,8 +329,8 @@ Wir verstehen uns als lokale Bürgerinitiative, die auf sachlicher Grundlage auf
 <section class="card" id="ziele">
 <h2>Ziele</h2>
 
-<!-- OBEN: BELASTUNGEN -->
-<div class="grid grid-top">
+<!-- OBEN: BELASTUNGEN (Ergänzt um einheitliches Grid-Styling) -->
+<div class="grid grid-top" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; align-items: stretch;">
 <div class="info">
 <div class="info-icon">🚗</div>
 <h3>Verkehr</h3>
@@ -348,8 +348,8 @@ Wir verstehen uns als lokale Bürgerinitiative, die auf sachlicher Grundlage auf
 </div>
 </div>
 
-<!-- UNTEN: WIRKUNG / ZIELE (style-Attribut erzwingt hier 3 Spalten) -->
-<div class="grid grid-bottom" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+<!-- UNTEN: WIRKUNG / ZIELE (align-items: stretch erzwingt die gleiche Höhe) -->
+<div class="grid grid-bottom" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; align-items: stretch; margin-top: 1rem;">
 <div class="info">
 <div class="info-icon">🏠</div>
 <h3>Ruhe</h3>
